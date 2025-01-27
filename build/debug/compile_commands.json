@@ -1,0 +1,38 @@
+[
+{
+  "directory": "D:/devs/projects/mecs/build/debug",
+  "command": "D:\\Scoop\\apps\\llvm\\current\\bin\\clang-cl.exe  /nologo -ID:\\devs\\projects\\mecs\\include /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\mecs.dir\\src\\mecs.c.obj /FdCMakeFiles\\mecs.dir\\mecs.pdb -c -- D:\\devs\\projects\\mecs\\src\\mecs.c",
+  "file": "D:\\devs\\projects\\mecs\\src\\mecs.c",
+  "output": "CMakeFiles\\mecs.dir\\src\\mecs.c.obj"
+},
+{
+  "directory": "D:/devs/projects/mecs/build/debug",
+  "command": "D:\\Scoop\\apps\\llvm\\current\\bin\\clang-cl.exe  /nologo -ID:\\devs\\projects\\mecs\\include /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\mecs.dir\\src\\mecs-world.c.obj /FdCMakeFiles\\mecs.dir\\mecs.pdb -c -- D:\\devs\\projects\\mecs\\src\\mecs-world.c",
+  "file": "D:\\devs\\projects\\mecs\\src\\mecs-world.c",
+  "output": "CMakeFiles\\mecs.dir\\src\\mecs-world.c.obj"
+},
+{
+  "directory": "D:/devs/projects/mecs/build/debug",
+  "command": "D:\\Scoop\\apps\\llvm\\current\\bin\\clang-cl.exe  /nologo -ID:\\devs\\projects\\mecs\\include /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\mecs.dir\\src\\mecs-utils.c.obj /FdCMakeFiles\\mecs.dir\\mecs.pdb -c -- D:\\devs\\projects\\mecs\\src\\mecs-utils.c",
+  "file": "D:\\devs\\projects\\mecs\\src\\mecs-utils.c",
+  "output": "CMakeFiles\\mecs.dir\\src\\mecs-utils.c.obj"
+},
+{
+  "directory": "D:/devs/projects/mecs/build/debug",
+  "command": "D:\\Scoop\\apps\\llvm\\current\\bin\\clang-cl.exe  /nologo -ID:\\devs\\projects\\mecs\\include /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\mecs.dir\\src\\mecs-entity.c.obj /FdCMakeFiles\\mecs.dir\\mecs.pdb -c -- D:\\devs\\projects\\mecs\\src\\mecs-entity.c",
+  "file": "D:\\devs\\projects\\mecs\\src\\mecs-entity.c",
+  "output": "CMakeFiles\\mecs.dir\\src\\mecs-entity.c.obj"
+},
+{
+  "directory": "D:/devs/projects/mecs/build/debug",
+  "command": "D:\\Scoop\\apps\\llvm\\current\\bin\\clang-cl.exe  /nologo -ID:\\devs\\projects\\mecs\\include /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /FoCMakeFiles\\mecs.dir\\src\\mecs-component.c.obj /FdCMakeFiles\\mecs.dir\\mecs.pdb -c -- D:\\devs\\projects\\mecs\\src\\mecs-component.c",
+  "file": "D:\\devs\\projects\\mecs\\src\\mecs-component.c",
+  "output": "CMakeFiles\\mecs.dir\\src\\mecs-component.c.obj"
+},
+{
+  "directory": "D:/devs/projects/mecs/build/debug",
+  "command": "D:\\Scoop\\apps\\llvm\\current\\bin\\clang-cl.exe  /nologo -ID:\\devs\\projects\\mecs\\include /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd /Foexample\\CMakeFiles\\example.dir\\main.c.obj /Fdexample\\CMakeFiles\\example.dir\\ -c -- D:\\devs\\projects\\mecs\\example\\main.c",
+  "file": "D:\\devs\\projects\\mecs\\example\\main.c",
+  "output": "example\\CMakeFiles\\example.dir\\main.c.obj"
+}
+]

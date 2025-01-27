@@ -1,0 +1,14 @@
+# ninja log v6
+17	156	7596962526225357	example/CMakeFiles/example.dir/main.c.obj	61542945bb1312e2
+13	147	7596679033468712	CMakeFiles/mecs.dir/src/mecs.c.obj	d5ae71dda071c5a3
+148	182	7596679034798763	mecs.lib	5ddfcc4fc69bf049
+182	338	7596679035108090	example/example.exe	c5b64f6ded8cc7a7
+13	339	7596963501469464	build.ninja	60004b114fdcda42
+32	69	7596963502107718	CMakeFiles/mecs.dir/src/mecs-entity.c.obj	3f70667b685b456f
+36	75	7596963502260571	CMakeFiles/mecs.dir/src/mecs-component.c.obj	ef739cffc013c7b7
+27	100	7596963502107718	CMakeFiles/mecs.dir/src/mecs-utils.c.obj	7f6f53722e6bb3c6
+13	50	7596963733771838	CMakeFiles/mecs.dir/src/mecs-world.c.obj	181767bdb7e466fc
+51	152	7596963734163152	mecs.lib	e39baa601808d05
+152	344	7596963735094373	example/example.exe	c5b64f6ded8cc7a7
+12	73	7596967154542810	example/CMakeFiles/example.dir/main.c.obj	61542945bb1312e2
+73	230	7596967155175750	example/example.exe	c5b64f6ded8cc7a7

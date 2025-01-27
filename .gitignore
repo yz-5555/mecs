@@ -1,0 +1,7 @@
+.clangd
+.clang-format
+
+CMakePresets.json
+exmaple/CMakePresets.json
+
+run.bat
