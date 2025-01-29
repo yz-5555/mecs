@@ -1,7 +1,6 @@
-#include "mecs.h"
-#include <stdio.h>
+#ifndef MECS_TYPES_H
+#define MECS_TYPES_H
 
-void hi_mecs() {
-    unsigned long num = 1UL << 24;
-    printf("hi, %d\n", __builtin_ctz(num));
-}
+typedef unsigned int u32;
+
+#endif

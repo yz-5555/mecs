@@ -1,6 +1,6 @@
 #ifndef MECS_H
 #define MECS_H
 
-void hi_mecs();
+#include "mecs-world.h"
 
 #endif
