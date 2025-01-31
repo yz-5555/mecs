@@ -1,7 +1,7 @@
 #ifndef MECS_CONSTANTS_H
 #define MECS_CONSTANTS_H
 
-#define MAX_ENTITIES 74
+#define MAX_ENTITIES 128
 #define MAX_COMPONENTS 32
 
 #endif
