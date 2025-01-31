@@ -4,10 +4,13 @@
 #include "utils/mecs-bitset.h"
 #include "utils/mecs-constants.h"
 #include "mecs-entity.h"
+
 #include <stdbool.h>
+#include <stdint.h>
 
 typedef struct {
-	unsigned long long entities[BITSET_ARRAY_LENGTH(MAX_ENTITIES, unsigned long long)];
+	uint64_t entities[BITSET_ARRAY_SIZE(MAX_ENTITIES, uint64_t)];
+	size_t entities_size;
 } World;
 
 World* mecs_new_world();
