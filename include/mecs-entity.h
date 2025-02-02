@@ -1,6 +1,8 @@
 #ifndef MECS_ENTITY_H
 #define MECS_ENTITY_H
 
-typedef unsigned int Entity;
+#include <stdint.h>
+
+typedef uint32_t Entity;
 
 #endif
