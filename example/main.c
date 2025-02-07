@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(void) {
-    World* world = mecs_new_world();
+    World* world = mecs_new_world(64, 4);
     mecs_print_entities(world);
 
     Entity entity = mecs_new_entity(world);

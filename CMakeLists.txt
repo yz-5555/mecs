@@ -8,7 +8,7 @@ add_library(${PROJECT_NAME}
 	src/mecs-utils.c
 	src/mecs-entity.c
 	src/mecs-component.c
-	src/utils/mecs-sparseset.c
+	src/utils/mecs-sparse-set.c
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
