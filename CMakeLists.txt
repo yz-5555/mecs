@@ -3,11 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 project(mecs LANGUAGES C)
 
 add_library(${PROJECT_NAME}
-	src/mecs.c
 	src/mecs-world.c
-	src/mecs-utils.c
-	src/mecs-entity.c
-	src/mecs-component.c
 	src/utils/mecs-sparse-set.c
 )
 
