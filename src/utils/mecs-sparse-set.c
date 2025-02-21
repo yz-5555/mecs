@@ -5,7 +5,6 @@ void mecs_init_sparse_set(SparseSet* sparse_set, size_t size, size_t capacity, s
     sparse_set->sparse = malloc(capacity * sizeof(size_t));
     sparse_set->dense = malloc(length * size);
     sparse_set->size = size;
-
     sparse_set->capacity = capacity;
     sparse_set->length = length;
 }
