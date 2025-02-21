@@ -1,3 +1,8 @@
-add_executable(example main.c)
+set(PROJ example)
 
-target_link_libraries(example PRIVATE mecs)
+add_subdirectory(external/raylib)
+
+add_executable(${PROJ} main.c)
+
+target_link_libraries(${PROJ} PRIVATE mecs)
+target_link_libraries(${PROJ} PRIVATE raylib)
