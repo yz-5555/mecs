@@ -1,25 +1,32 @@
-#include "mecs.h"
+#include "mecs-entity.h"
+#include "mecs-world.h"
 #include <raylib.h>
 
 int main(void) {
-    World* world = mecs_new_world(64, 4);
-    Entity entity = mecs_new_entity(world);
-
     InitWindow(800, 600, "mecs - example");
     SetTargetFPS(60);
 
+    MecsWorld* world = mecs_world_new(64, 4);
+    MecsEntity entity = mecs_entity_new(world);
+
     while (!WindowShouldClose()) {
+        if (IsKeyDown(KEY_SPACE))
+            entity = mecs_entity_new(world);
+        if (IsKeyDown(KEY_BACKSPACE))
+            mecs_entity_remove(world, entity);
+
         BeginDrawing();
         {
             ClearBackground(WHITE);
-            if (mecs_is_alive(world, entity))
+            if (mecs_entity_alive(world, entity))
                 DrawText("Hello, entity!", 190, 200, 20, BLACK);
         }
         EndDrawing();
     }
 
+    mecs_world_free(world);
+
     CloseWindow();
 
-    mecs_free_world(world);
     return 0;
 }

@@ -1,29 +1,28 @@
 #ifndef MECS_WORLD_H
 #define MECS_WORLD_H
 
+#include "mecs-entity.h"
+
 #include "utils/mecs-constants.h"
 #include "utils/mecs-sparse-set.h"
-
-#include "mecs-entity.h"
 
 #include <stdbool.h>
 #include <stdint.h>
 
-typedef struct {
+typedef struct MecsWorld {
     uint64_t* entities;         // Array of entity bitsets
     size_t entities_capacity;   // Capacity of `entities`
-    SparseSet* components;      // Array of component sparse sets
+    MecsSparseSet* components;  // Array of component sparse sets
     size_t components_capacity; // Capacity of `components`
-} World;
+} MecsWorld;
 
-World* mecs_new_world(size_t entities_capacity, size_t components_capacity);
-void mecs_free_world(World* world);
+MecsWorld* mecs_world_new(size_t entities_capacity, size_t components_capacity);
+void mecs_world_free(MecsWorld* world);
 
-Entity mecs_new_entity(World* world);
-void mecs_remove_entity(World* world, Entity entity);
-bool mecs_is_alive(const World* world, Entity entity);
-void mecs_print_entities(const World* world);
+MecsEntity mecs_entity_new(MecsWorld* world);
+void mecs_entity_remove(MecsWorld* world, MecsEntity entity);
+bool mecs_entity_alive(const MecsWorld* world, MecsEntity entity);
 
-#define MECS_DEFAULT_WORLD() mecs_new_world(MECS_ENTITIES_CAPACITY, MECS_COMPONENTS_CAPACITY)
+#define MECS_WORLD_DEFAULT() mecs_world_new(MECS_ENTITIES_CAPACITY, MECS_COMPONENTS_CAPACITY)
 
 #endif
