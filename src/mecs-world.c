@@ -5,7 +5,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -52,6 +52,18 @@ MecsEntity mecs_entity_new(MecsWorld* world) {
 
     return entity_index;
 }
+// TODO: this function is not functional.
+void mecs_entity_set(MecsWorld* world, MecsEntity entity) {
+    if (entity >= world->entities_capacity)
+        return;
+
+    size_t array_index = entity / MECS_BITSET_LEN(uint64_t);
+    size_t entity_index = entity % MECS_BITSET_LEN(uint64_t);
+
+    printf("entity: %llu\narray_index: %llu\nentity_index: %llu\n", entity, array_index, entity_index);
+
+    MECS_SET_BIT(world->entities[array_index], entity_index);
+}
 void mecs_entity_remove(MecsWorld* world, MecsEntity entity) {
     if (entity >= world->entities_capacity)
         return;
@@ -69,4 +81,12 @@ bool mecs_entity_alive(const MecsWorld* world, MecsEntity entity) {
     size_t entity_index = entity % MECS_BITSET_LEN(uint64_t);
 
     return (bool)MECS_GET_BIT(world->entities[array_index], entity_index);
+}
+MecsEntity mecs_component_new(MecsWorld* world) {
+    MecsEntity e;
+    return e;
+}
+void mecs_component_set(MecsWorld* world, MecsEntity component_entity) {
+}
+void mecs_component_remove(MecsWorld* world, MecsEntity component_entity) {
 }
