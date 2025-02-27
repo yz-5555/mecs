@@ -3,6 +3,6 @@
 
 #include "mecs-world.h"
 
-void mecs_print_entities(const MecsWorld* world);
+void mecs_print_entities(const MecsWorld *world);
 
 #endif

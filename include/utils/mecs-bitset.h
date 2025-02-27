@@ -8,8 +8,8 @@
 #define MECS_BITSET_ARRAY_LEN(L, T) ((L + MECS_BITS_PER(T) - 1) / MECS_BITS_PER(T))
 #define MECS_BITSET_LEN(B) (sizeof(B) * CHAR_BIT)
 
-#define MECS_SET_BIT(B, I) ((B) |= (1U << (I)))
-#define MECS_CLEAR_BIT(B, I) ((B) &= ~(1U << (I)))
-#define MECS_GET_BIT(B, I) (((B) >> (I)) & 1U)
+#define MECS_SET_BIT(B, I, T) ((B) |= ((T)1 << (I)))
+#define MECS_CLEAR_BIT(B, I, T) ((B) &= ~((T)1 << (I)))
+#define MECS_GET_BIT(B, I, T) (((B) >> (I)) & (T)1)
 
 #endif
