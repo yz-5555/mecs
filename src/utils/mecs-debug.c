@@ -1,8 +1,9 @@
+#include "mecs-world.h"
+
 #include "utils/mecs-debug.h"
 
 #include <stdio.h>
 
-// TODO: Design better logic. Currently not functional and not looks that efficient.
 void mecs_print_entities(const MecsWorld *world) {
     for (MecsEntity i = 0; i < world->entities_capacity; i += 1) {
         printf("Entity %llu: ", i);

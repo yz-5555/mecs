@@ -1,6 +1,4 @@
-#include "mecs-entity.h"
-#include "mecs-world.h"
-#include "utils/mecs-debug.h"
+#include "mecs.h"
 
 #include <raylib.h>
 #include <stdio.h>

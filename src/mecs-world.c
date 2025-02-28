@@ -41,7 +41,7 @@ MecsEntity mecs_entity_new(MecsWorld *world) {
     size_t len = MECS_BITSET_ARRAY_LEN(world->entities_capacity, uint64_t);
 
     for (size_t i = 0; i < len; i += 1) {
-        if (world->entities[i] != ~0ULL) {
+        if (world->entities[i] != ~(MECS_ENTITIES_BITSET_TYPE)0) {
             array_index = i;
             break;
         }

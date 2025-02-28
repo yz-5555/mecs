@@ -10,27 +10,21 @@
 #include <stdint.h>
 
 // Constants
-#ifndef MECS_ENTITIES_CAPACITY
 #define MECS_ENTITIES_CAPACITY 128
-#endif
 
-#ifndef MECS_COMPONENTS_CAPACITY
 #define MECS_COMPONENTS_CAPACITY 32
-#endif
 
-#ifndef MECS_ENTITIES_BITSET_TYPE
 #define MECS_ENTITIES_BITSET_TYPE uint64_t
-#endif
 
 enum {
     MECS_ENTITIES_BITSET_LEN = MECS_BITSET_LEN(MECS_ENTITIES_BITSET_TYPE)
 };
 // Types
 typedef struct MecsWorld {
-    uint64_t *entities;         // Array of entity bitsets
-    size_t entities_capacity;   // Capacity of `entities`
-    MecsSparseSet *components;  // Array of component sparse sets
-    size_t components_capacity; // Capacity of `components`
+    MECS_ENTITIES_BITSET_TYPE *entities; // Array of entity bitsets
+    size_t entities_capacity;            // Capacity of `entities`
+    MecsSparseSet *components;           // Array of component sparse sets
+    size_t components_capacity;          // Capacity of `components`
 } MecsWorld;
 
 // World member functions
