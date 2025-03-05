@@ -7,10 +7,10 @@ int main(void) {
     InitWindow(800, 600, "mecs - example");
     SetTargetFPS(60);
 
-    MecsWorld *world = mecs_world_new(64, 4);
+    MecsWorld *world = mecs_world_new(50, 4);
     MecsEntity entity = mecs_entity_new(world);
 
-    mecs_entity_set(world, 63);
+    mecs_entity_set(world, 49);
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_SPACE)) {
