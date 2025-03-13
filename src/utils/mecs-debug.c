@@ -13,7 +13,7 @@ void mecs_print_entities(const MecsWorld *world) {
             else
                 printf("\x1b[2mINACTIVE\x1b[0m\n");
         } else {
-			printf("\x1b[94mEMPTY\x1b[0m\n");
-		}
+            printf("\x1b[94mEMPTY\x1b[0m\n");
+        }
     }
 }
