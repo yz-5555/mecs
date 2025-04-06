@@ -1,4 +1,5 @@
 #include "utils/mecs-sparse-set.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 void mecs_sparse_set_init(MecsSparseSet *sparse_set, size_t size, size_t capacity, size_t length) {
@@ -21,4 +22,6 @@ void *mecs_sparse_set_index(const MecsSparseSet *sparse_set, size_t index) {
         return NULL;
 
     return (void *)((char *)sparse_set->dense + index * sparse_set->size);
+}
+void mecs_sparse_set_push_back(MecsSparseSet *sparse_set, void *value) {
 }

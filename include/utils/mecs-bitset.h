@@ -12,4 +12,7 @@
 #define MECS_CLEAR_BIT(B, I, T) ((B) &= ~((T)1 << (I)))
 #define MECS_GET_BIT(B, I, T) (((B) >> (I)) & (T)1)
 
+inline int mecs_count_trailing_zero(unsigned int bit) {
+    return __builtin_ctz(bit);
+}
 #endif

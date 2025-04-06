@@ -6,4 +6,5 @@ build/
 CMakePresets.json
 exmaple/CMakePresets.json
 
+build.bat
 run.bat

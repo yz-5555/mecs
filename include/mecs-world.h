@@ -10,10 +10,10 @@
 #include <stdint.h>
 
 // Types
-typedef uint64_t MecsEntitiesBitset;
+typedef uint64_t MecsEntityBitset;
 
 typedef struct MecsWorld {
-    MecsEntitiesBitset *entities;       // Array of entity bitsets
+    MecsEntityBitset *entities;         // Array of entity bitsets
     size_t entities_capacity;           // Capacity of `entities`
     size_t entities_allocated_capacity; // Real allocated capacity of `entities`
     MecsSparseSet *components;          // Array of component sparse sets
@@ -21,19 +21,17 @@ typedef struct MecsWorld {
 } MecsWorld;
 
 // Constants
-#define MECS_ENTITIES_CAPACITY 128
-
-#define MECS_COMPONENTS_CAPACITY 32
-
+#define MECS_DEFAULT_ENTITIES_CAPACITY 128
+#define MECS_DEFAULT_COMPONENTS_CAPACITY 32
 enum {
-    MECS_ENTITIES_BITSET_LEN = MECS_BITSET_LEN(MecsEntitiesBitset)
+    MECS_ENTITIES_BITSET_LEN = MECS_BITSET_LEN(MecsEntityBitset)
 };
 
 // World member functions
 MecsWorld *mecs_world_new(size_t entities_capacity, size_t components_capacity);
 void mecs_world_free(MecsWorld *world);
 
-#define MECS_WORLD_DEFAULT() mecs_world_new(MECS_ENTITIES_CAPACITY, MECS_COMPONENTS_CAPACITY)
+#define MECS_WORLD_DEFAULT() mecs_world_new(MECS_DEFAULT_ENTITIES_CAPACITY, MECS_DEFAULT_COMPONENTS_CAPACITY)
 
 // Entity mananger
 MecsEntity mecs_entity_new(MecsWorld *world);
@@ -45,7 +43,7 @@ static inline void mecs_entity_set(MecsWorld *world, MecsEntity entity) {
     size_t array_index = entity / MECS_ENTITIES_BITSET_LEN;
     size_t entity_index = entity % MECS_ENTITIES_BITSET_LEN;
 
-    MECS_SET_BIT(world->entities[array_index], entity_index, MecsEntitiesBitset);
+    MECS_SET_BIT(world->entities[array_index], entity_index, MecsEntityBitset);
 }
 static inline void mecs_entity_remove(MecsWorld *world, MecsEntity entity) {
     if (entity >= world->entities_capacity)
@@ -54,7 +52,7 @@ static inline void mecs_entity_remove(MecsWorld *world, MecsEntity entity) {
     size_t array_index = entity / MECS_ENTITIES_BITSET_LEN;
     size_t entity_index = entity % MECS_ENTITIES_BITSET_LEN;
 
-    MECS_CLEAR_BIT(world->entities[array_index], entity_index, MecsEntitiesBitset);
+    MECS_CLEAR_BIT(world->entities[array_index], entity_index, MecsEntityBitset);
 }
 static inline bool mecs_entity_alive(const MecsWorld *world, MecsEntity entity) {
     if (entity >= world->entities_capacity)
@@ -63,7 +61,7 @@ static inline bool mecs_entity_alive(const MecsWorld *world, MecsEntity entity) 
     size_t array_index = entity / MECS_ENTITIES_BITSET_LEN;
     size_t entity_index = entity % MECS_ENTITIES_BITSET_LEN;
 
-    return (bool)MECS_GET_BIT(world->entities[array_index], entity_index, MecsEntitiesBitset);
+    return (bool)MECS_GET_BIT(world->entities[array_index], entity_index, MecsEntityBitset);
 }
 
 // Component manager

@@ -8,6 +8,7 @@ add_library(${PROJECT_NAME}
 	src/utils/mecs-sparse-set.c
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PUBLIC
+				${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_subdirectory(example)

@@ -23,7 +23,7 @@ MecsWorld *mecs_world_new(size_t entities_capacity, size_t components_capacity) 
 
     world->entities_capacity = entities_capacity;
 
-	world->entities_allocated_capacity = MECS_ENTITIES_BITSET_LEN * len;
+    world->entities_allocated_capacity = MECS_ENTITIES_BITSET_LEN * len;
 
     // Initialize array of component sparse sets
     world->components = malloc(components_capacity * sizeof(MecsSparseSet));
@@ -43,15 +43,15 @@ MecsEntity mecs_entity_new(MecsWorld *world) {
     size_t len = MECS_BITSET_ARRAY_LEN(world->entities_capacity, uint64_t);
 
     for (size_t i = 0; i < len; i += 1) {
-        if (world->entities[i] != ~(MecsEntitiesBitset)0) {
+        if (world->entities[i] != ~(MecsEntityBitset)0) {
             array_index = i;
             break;
         }
     }
 
-    size_t entity_index = __builtin_ctz(~(world->entities[array_index]));
+    size_t entity_index = mecs_count_trailing_zero(~(world->entities[array_index]));
 
-    MECS_SET_BIT(world->entities[array_index], entity_index, MecsEntitiesBitset);
+    MECS_SET_BIT(world->entities[array_index], entity_index, MecsEntityBitset);
 
     return entity_index;
 }
