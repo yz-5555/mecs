@@ -1,6 +1,7 @@
 #include "utils/mecs-sparse-set.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void mecs_sparse_set_init(MecsSparseSet *sparse_set, size_t size, size_t capacity, size_t length) {
     sparse_set->sparse = malloc(capacity * sizeof(size_t));
@@ -21,7 +22,20 @@ void *mecs_sparse_set_index(const MecsSparseSet *sparse_set, size_t index) {
     if (i >= sparse_set->length)
         return NULL;
 
-    return (void *)((char *)sparse_set->dense + index * sparse_set->size);
+    return (void *)((char *)sparse_set->dense + i * sparse_set->size);
 }
-void mecs_sparse_set_push_back(MecsSparseSet *sparse_set, void *value) {
+void mecs_sparse_set_set(MecsSparseSet *sparse_set, size_t index, const void *value) {
+    if (index >= sparse_set->capacity)
+        return;
+
+	size_t i = sparse_set->sparse[index];
+	if (i >= sparse_set->length)
+		return;
+
+    memcpy(
+        (char *)sparse_set->dense + i * sparse_set->size,
+        value,
+        sparse_set->size);
+}
+void mecs_sparse_set_push_back(MecsSparseSet *sparse_set, const void *value) {
 }
